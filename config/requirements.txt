@@ -1,0 +1,22 @@
+# 燃烧速度仿真软件依赖包
+# Combustion Simulation Software Dependencies
+
+# 核心依赖
+numpy>=1.20.0
+pandas>=1.3.0
+Pillow>=8.0.0
+matplotlib>=3.3.0
+scipy>=1.7.0
+
+# 打包工具
+pyinstaller>=4.5.0
+auto-py-to-exe>=2.20.0
+
+# 开发工具
+setuptools>=50.0.0
+wheel>=0.36.0
+
+# 可选依赖（高级功能）
+# cantera>=2.6.0  # 完整仿真支持，安装复杂，可选
+
+# 注意：tkinter通常随Python安装，无需单独安装
