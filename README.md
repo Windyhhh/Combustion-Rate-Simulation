@@ -2,22 +2,33 @@
 
 # 🔥 Combustion-Rate-Simulation
 
-### Propellant combustion rate simulation software.
+### A propellant combustion-rate simulation with Cantera.
 
-A full-stack, reusable system for computing propellant combustion rates with a GUI.
+Mechanism selection, formulation design, storage & operating-condition config and real-time output in a modern GUI.
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Python](https://img.shields.io/badge/Python-3.8+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
-[![GUI](https://img.shields.io/badge/GUI-Tkinter-2EA44F)](https://docs.python.org/3/library/tkinter.html)
+[![Python](https://img.shields.io/badge/Python-3.9+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Cantera](https://img.shields.io/badge/Cantera-2.6-7B1FA2)](https://cantera.org/)
+[![PyQt](https://img.shields.io/badge/PyQt-GUI-41CD52)](https://www.riverbankcomputing.com/software/pyqt/)
 
 </div>
 
 ---
 
-**Combustion-Rate-Simulation** is a propellant combustion-rate simulation software. It models species, reactions, phases and boundary layers to compute combustion rates, wrapped in a desktop GUI — built as a modular, reusable system.
+**Combustion-Rate-Simulation** is a professional **propellant combustion-rate** computation system built on **Cantera**. It combines mechanism selection, formulation design, storage & operating-condition configuration and real-time result output in a modern side-bar GUI, with a layered architecture that decouples the compute engine from the UI.
 
 > [!NOTE]
-> 中文项目：推进剂燃烧速率仿真软件——全栈计算系统，可复用架构。
+> 中文项目：推进剂燃烧速度仿真软件——Cantera 计算核心 + 侧边栏 GUI，机理/配方/贮存/工况配置，多线程并行。
+
+---
+
+## Features
+
+- **Cantera engine** — combustion-rate computation with multiple mechanisms.
+- **Full workflow** — mechanism selection, formulation, storage params, operating conditions, result output.
+- **Layered design** — compute core decoupled from GUI; multi-threaded parallel computing.
+- **Fast** — single case < 2s, 100+ batch cases, UI response < 100ms.
+- **Modern GUI** — particle animations, side-bar navigation.
 
 ---
 
@@ -27,19 +38,10 @@ A full-stack, reusable system for computing propellant combustion rates with a G
 git clone https://github.com/Windyhhh/Combustion-Rate-Simulation.git
 cd Combustion-Rate-Simulation
 
-# Run the GUI simulation
-python archive/BRold_old/Gui_Main.py
+pip install -r requirements.txt
+
+python src/main.py          # launch the simulation GUI
 ```
-
-The core modules (`Phase`, `Reactions`, `Species`, `melt_layer`, `delta_layer`) live in `archive/BRold_old/` with chemical mechanisms under `resources/`.
-
----
-
-## Features
-
-- **Combustion-rate modeling** — species, reactions, phase and boundary-layer modules.
-- **GUI** — desktop simulation interface.
-- **Reusable architecture** — modular Python modules + YAML chemical mechanisms.
 
 ---
 
@@ -47,10 +49,12 @@ The core modules (`Phase`, `Reactions`, `Species`, `melt_layer`, `delta_layer`) 
 
 ```
 Combustion-Rate-Simulation/
-├── archive/BRold_old/     # Gui.py, Gui_Main.py, Phase.py, Reactions.py, Species.py, run.py
-│   └── resources/         # chemical mechanisms (chem.yaml, ...)
-├── assets/                # images / logos
-└── build/                 # old packaged builds
+├── src/
+│   ├── engine/             # Cantera computation core
+│   ├── gui/                # PyQt interface
+│   └── config/             # mechanism & formulation config
+├── data/                   # mechanisms, properties
+└── docs/                   # optimization, blog
 ```
 
 ---
