@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🔥 Combustion-Rate-Simulation
+# 推进剂燃速仿真 | Combustion-Rate-Simulation
 
 ### A propellant combustion-rate simulation with Cantera.
 
